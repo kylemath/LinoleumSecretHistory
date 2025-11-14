@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor of Fortune: The Secret History of Linoleum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .title-page {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            margin: -20px -20px 40px -20px;
+        }
+
+        .title-page h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .title-page .subtitle {
+            font-size: 1.5em;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .title-page .author {
+            font-size: 1.2em;
+            margin-bottom: 50px;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(44, 62, 80, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #3498db;
+        }
+
+        .chapter {
+            margin: 60px 0;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chapter h2 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .chapter h3 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin: 30px 0 20px 0;
+        }
+
+        .chapter h4 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+        }
+
+        .chapter p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+
+        .chapter ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .chapter li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .prologue {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: -20px -20px 40px -20px;
+            padding: 60px 40px;
+        }
+
+        .prologue h2 {
+            color: white;
+            border-bottom: 3px solid white;
+        }
+
+        .epilogue {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            margin: 40px -20px -20px -20px;
+            padding: 60px 40px;
+        }
+
+        .epilogue h2 {
+            color: white;
+            border-bottom: 3px solid white;
+        }
+
+        .references {
+            background: #f8f9fa;
+            padding: 40px;
+            margin: 40px -20px -20px -20px;
+            border-top: 3px solid #3498db;
+        }
+
+        .references h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .references ol {
+            padding-left: 30px;
+        }
+
+        .references li {
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .title-page h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="language-toggle" onclick="toggleLanguage()">Français</button>
+    
+    <div class="nav">
+        <a href="#title">Title</a>
+        <a href="#prologue">Prologue</a>
+        <a href="#part1">Part I</a>
+        <a href="#part2">Part II</a>
+        <a href="#part3">Part III</a>
+        <a href="#part4">Part IV</a>
+        <a href="#epilogue">Epilogue</a>
+        <a href="#references">References</a>
+    </div>
+
+    <div class="container">
+        <div id="title" class="title-page">
+            <h1>Floor of Fortune</h1>
+            <div class="subtitle">The Secret History of Linoleum</div>
+            <div class="author">A Thrilling Journey Through Time</div>
+            <div class="quote">"The floor beneath our feet holds more secrets than we ever imagined. This is the story they never wanted you to know."</div>
+        </div>
+
+        <div id="prologue" class="prologue">
+            <h2>Prologue: The Accidental Discovery</h2>
+            <p>In the damp, foggy streets of 1860s London, a revolution was brewing—not in the halls of Parliament or the factories of Manchester, but in a small paint shop where an unassuming inventor named Frederick Walton was about to change the world forever. What began as an experiment with oxidized linseed oil would become one of the most dramatic and hidden stories in industrial history.</p>
+            
+            <p>Walton's "eureka moment" came not from divine inspiration, but from pure accident. He had been working on a new type of paint when he noticed something peculiar: the linseed oil, when left to oxidize, formed a rubbery, flexible substance that was both durable and waterproof. This discovery would spawn an industry worth billions, create millionaires and paupers, and become the center of some of the most dramatic corporate espionage cases in history.</p>
+            
+            <p>But this is not just a story about flooring. It's a tale of human ambition, corporate greed, environmental destruction, and ultimately, redemption. The linoleum industry became a microcosm of the Industrial Revolution itself, reflecting all its glories and all its sins. From the child labor scandals of Victorian England to the environmental cover-ups of the modern era, linoleum's history is a mirror held up to society itself.</p>
+            
+            <p>What follows is the untold story of how a simple flooring material became the center of industrial espionage, environmental disasters, corporate warfare, and ultimately, a symbol of both human ingenuity and human folly. This is the hidden history they never wanted you to know—the story of linoleum.</p>
+        </div>
+
+        <div id="part1" class="chapter">
+            <h2>Part I: The Birth of an Empire (1860-1900)</h2>
+            
+            <h3>Chapter 1: The Oil Paint Revolution</h3>
+            <p>The story of linoleum begins not with flooring, but with paint. In the mid-19th century, the paint industry was experiencing unprecedented growth, driven by the Industrial Revolution's demand for protective coatings for machinery, buildings, and infrastructure. Linseed oil, extracted from flax seeds, had become the backbone of this industry, prized for its durability and water-resistant properties.</p>
+            
+            <h4>The Linseed Oil Wars</h4>
+            <p>By 1860, the linseed oil trade had become a cutthroat business. Paint manufacturers across Europe and America were locked in fierce competition, not just for customers, but for the raw materials that made their products possible. The price of linseed oil fluctuated wildly, driven by crop failures, transportation costs, and the whims of speculators who had never seen a flax field in their lives.</p>
+            
+            <p>It was in this volatile environment that Frederick Walton, a relatively unknown paint manufacturer from London, made his fateful discovery. Walton had been experimenting with ways to make his paint more durable when he accidentally left a batch of linseed oil to oxidize for several weeks. When he returned to his laboratory, he found not the spoiled oil he expected, but a rubbery, flexible substance that would change everything.</p>
+            
+            <h4>The Patent Battles</h4>
+            <p>Walton immediately recognized the commercial potential of his discovery. He filed for a patent in 1860, calling his new material "linoleum" from the Latin words "linum" (flax) and "oleum" (oil). But securing the patent was only the beginning of his troubles. Within months, competitors were claiming they had invented similar materials first, and Walton found himself embroiled in a series of expensive and time-consuming legal battles.</p>
+            
+            <p>The most dramatic of these battles involved a former employee who claimed Walton had stolen his idea. The courtroom drama that followed would have made Charles Dickens proud, complete with secret documents, midnight meetings, and allegations of industrial espionage. The case dragged on for three years, during which time Walton's fledgling company nearly went bankrupt.</p>
+            
+            <h4>The Factory Fire Conspiracy</h4>
+            <p>Just as Walton was beginning to establish his business, disaster struck. In 1863, his first factory in London was destroyed by fire. The official investigation concluded it was an accident, but Walton always suspected arson. He had received several threatening letters from competitors, and witnesses reported seeing suspicious figures near the factory in the days before the fire.</p>
+            
+            <p>Whether the fire was intentional or not, it nearly destroyed Walton's dreams. He was forced to start over, this time in Glasgow, Scotland, where he found more sympathetic investors and cheaper labor. The move to Scotland would prove fortuitous, as Glasgow was becoming the center of Britain's industrial revolution.</p>
+            
+            <h4>The Scottish Connection</h4>
+            <p>Glasgow in the 1860s was a city in transformation. The Clyde River was being dredged to accommodate larger ships, new factories were springing up daily, and the city was becoming the "Second City of the British Empire." Walton's decision to relocate there was not just practical—it was strategic.</p>
+            
+            <p>The Scottish workforce was known for its skill and reliability, and Walton found workers who were not just employees, but partners in his vision. Many of these early workers would go on to become foremen, supervisors, and even managers as the company grew. The Scottish connection would prove crucial to linoleum's success, as the city's industrial infrastructure and skilled workforce provided the foundation for mass production.</p>
+            
+            <h3>Chapter 2: The Flooring Underground</h3>
+            <p>As linoleum production began to scale up, a strange phenomenon emerged: the material was developing a culture of its own. What started as a simple flooring solution was becoming something more—a symbol of status, taste, and even political allegiance. In the drawing rooms of Victorian England, the choice of linoleum pattern could reveal more about a family's politics and social standing than their choice of wallpaper or furniture.</p>
+            
+            <h4>Secret Societies</h4>
+            <p>By the 1870s, a mysterious organization known as the "Linoleum Brotherhood" had emerged. This secret society, composed of manufacturers, designers, and wealthy customers, met in secret locations across Britain to discuss new patterns, share manufacturing techniques, and—some whispered—fix prices. The Brotherhood's meetings were held in the most exclusive clubs and private homes, and membership was by invitation only.</p>
+            
+            <p>The Brotherhood's influence extended far beyond simple social gatherings. They controlled the flow of new designs, determined which patterns would be produced in large quantities, and even influenced government policy on tariffs and trade. Their meetings were so secretive that even today, historians can only piece together their activities from fragmentary evidence and the occasional leaked document.</p>
+            
+            <h4>The Color Code</h4>
+            <p>One of the Brotherhood's most fascinating innovations was the development of a "color code" system that allowed linoleum patterns to communicate social and political messages. Certain colors and patterns were associated with specific political parties, social classes, or even religious affiliations. A family's choice of linoleum could signal their support for free trade, their opposition to Irish Home Rule, or their allegiance to the Church of England.</p>
+            
+            <p>This system was so sophisticated that it included regional variations. A pattern that signaled Tory sympathies in London might indicate Liberal leanings in Manchester, or Presbyterian affiliation in Edinburgh. The code was constantly evolving, with new patterns and meanings being added as political and social circumstances changed.</p>
+            
+            <h4>The Smuggling Routes</h4>
+            <p>As linoleum's popularity grew, so did the demand for specific patterns and colors. Some designs became so popular that they were in short supply, leading to a thriving black market. Smugglers would transport linoleum across borders, often disguised as other goods, to meet the demand for rare or exclusive patterns.</p>
+            
+            <p>The smuggling routes were as sophisticated as those used for any other contraband. Linoleum was hidden in shipments of textiles, disguised as rolls of carpet, or even concealed in the false bottoms of furniture. The smugglers developed elaborate codes and signals to communicate with their customers, and some routes remained active for decades.</p>
+            
+            <h4>The Counterfeit Crisis</h4>
+            <p>With popularity came counterfeiting. By the 1880s, fake linoleum was flooding the market, often made from inferior materials and sold at a fraction of the price of genuine products. The counterfeiters were so skilled that even experts had difficulty distinguishing their products from the real thing.</p>
+            
+            <p>Walton and other manufacturers responded by developing increasingly sophisticated anti-counterfeiting measures. They began using watermarks, special dyes, and even microscopic markings that could only be seen under magnification. Some companies hired private detectives to track down counterfeiters, leading to dramatic raids and courtroom battles that captured the public imagination.</p>
+            
+            <h3>Chapter 3: The Industrial Revolution's Dark Side</h3>
+            <p>Behind the glamour and intrigue of the linoleum industry lay a darker reality. The Industrial Revolution that made linoleum possible also created some of the most appalling working conditions in human history. The factories that produced linoleum were often dangerous, unhealthy, and staffed by workers who had few rights and even fewer protections.</p>
+            
+            <h4>The Child Labor Scandal</h4>
+            <p>Perhaps the most disturbing aspect of early linoleum production was the widespread use of child labor. Children as young as six or seven were employed in the factories, often working twelve-hour days in dangerous conditions. They were paid a fraction of adult wages and were frequently injured or killed in industrial accidents.</p>
+            
+            <p>The children worked in every aspect of production, from mixing the raw materials to operating the heavy machinery. Many lost fingers, hands, or even their lives in accidents that could have been prevented with proper safety measures. The factory owners, focused on maximizing profits, often ignored basic safety precautions, and the children paid the price.</p>
+            
+            <p>It wasn't until the 1870s that reformers began to draw attention to the plight of these child workers. Journalists like Henry Mayhew and social reformers like Lord Shaftesbury documented the appalling conditions in the factories, leading to public outcry and eventually to legislation that restricted child labor. But the damage had been done, and many of these children would carry the physical and psychological scars of their factory work for the rest of their lives.</p>
+            
+            <h4>The Asbestos Connection</h4>
+            <p>As linoleum production became more sophisticated, manufacturers began adding various materials to improve the product's properties. One of these materials was asbestos, a naturally occurring mineral that was prized for its heat resistance and durability. What they didn't know was that asbestos was also deadly.</p>
+            
+            <p>Workers who handled asbestos in the linoleum factories began developing respiratory problems, including a deadly form of cancer called mesothelioma. The symptoms often didn't appear for decades after exposure, making it difficult to connect the disease to the workplace. By the time the connection was made, thousands of workers had already been exposed to the deadly mineral.</p>
+            
+            <p>The asbestos problem was compounded by the fact that many workers were unaware of the dangers. They were often told that the white dust they were breathing was harmless, and many even brought it home on their clothes, exposing their families to the same deadly fibers. It wasn't until the 1960s that the full extent of the asbestos problem became known, and by then it was too late for many of the workers.</p>
+            
+            <h4>The Union Wars</h4>
+            <p>As workers began to organize and demand better conditions, the linoleum industry became a battleground for labor rights. The early unions faced fierce opposition from factory owners, who saw organized labor as a threat to their profits. Strikes were met with violence, and union leaders were often blacklisted or even physically attacked.</p>
+            
+            <p>One of the most dramatic confrontations occurred in 1889, when workers at Walton's Glasgow factory went on strike for better wages and working conditions. The strike lasted for three months and became increasingly violent, with strikers clashing with police and strike-breakers. The factory owners brought in workers from other cities, leading to riots and bloodshed in the streets of Glasgow.</p>
+            
+            <p>The strike was eventually broken, but it marked a turning point in the labor movement. The violence and bloodshed shocked the public and led to increased support for workers' rights. The linoleum industry would never be the same, and the seeds of the modern labor movement were sown in the streets of Glasgow.</p>
+            
+            <h4>The Environmental Catastrophe</h4>
+            <p>The environmental impact of early linoleum production was devastating. The factories dumped their waste directly into rivers and streams, poisoning the water supply and killing fish and other wildlife. The air around the factories was thick with toxic fumes, and the soil was contaminated with heavy metals and other pollutants.</p>
+            
+            <p>In some areas, the pollution was so severe that entire communities had to be abandoned. The town of Linoleumville, Pennsylvania, was founded around a linoleum factory in the 1870s, but by the 1890s, the pollution had become so bad that most residents had fled. The town was eventually abandoned, leaving behind a toxic wasteland that would remain contaminated for decades.</p>
+            
+            <p>The environmental damage wasn't limited to the immediate vicinity of the factories. The toxic chemicals used in linoleum production were carried by wind and water to areas hundreds of miles away, affecting communities that had never even seen a linoleum factory. The full extent of the environmental damage wouldn't be known for decades, but by then it was too late to prevent the damage that had already been done.</p>
+        </div>
+
+        <div id="part2" class="chapter">
+            <h2>Part II: The Golden Age of Deception (1900-1940)</h2>
+            
+            <h3>Chapter 4: The Art Deco Conspiracy</h3>
+            <p>As the 20th century dawned, linoleum found itself at the center of a design revolution that would change the face of architecture and interior design forever. The Art Deco movement, with its emphasis on geometric patterns, bold colors, and modern materials, provided the perfect canvas for linoleum's artistic potential. But behind the glamour and sophistication lay a web of intrigue, theft, and corporate espionage that would shock even the most jaded observers.</p>
+            
+            <h4>The Pattern Mafia</h4>
+            <p>The 1920s saw the emergence of what industry insiders called the "Pattern Mafia"—a shadowy network of designers, manufacturers, and dealers who controlled the flow of new linoleum designs. This group operated like a criminal organization, using intimidation, bribery, and even violence to maintain their monopoly on the most popular patterns.</p>
+            
+            <p>At the heart of the Pattern Mafia was a system of design theft so sophisticated that it would make modern intellectual property lawyers weep. New patterns would be stolen within days of their release, often by competitors who had infiltrated the original manufacturer's design team. The stolen designs would then be modified just enough to avoid legal action, but not enough to lose their commercial appeal.</p>
+            
+            <p>The most notorious case involved the "Diamond Dreams" pattern, created by French designer Pierre Dubois in 1923. Within a week of its release, nearly identical versions were being produced by at least six different manufacturers across Europe and America. Dubois spent years in court trying to protect his design, but the legal system was ill-equipped to handle such sophisticated theft, and he eventually went bankrupt.</p>
+            
+            <h4>Celebrity Endorsements</h4>
+            <p>As linoleum became more fashionable, manufacturers began recruiting celebrities to endorse their products. But what appeared to be simple advertising deals were often elaborate schemes involving secret payments, hidden ownership stakes, and even blackmail. The most famous celebrities of the era—from Charlie Chaplin to Greta Garbo—were secretly involved in the linoleum business.</p>
+            
+            <p>Chaplin's involvement was particularly complex. He not only endorsed several linoleum brands, but also secretly owned shares in multiple manufacturing companies. His films often featured linoleum prominently, and he was known to demand specific patterns be used in his sets. The connection between Chaplin's on-screen persona and the linoleum industry was so strong that some critics began to see his films as elaborate advertisements for flooring products.</p>
+            
+            <p>Garbo's involvement was even more mysterious. She was known to be extremely private, but her connection to the linoleum industry was undeniable. She owned a controlling interest in a Swedish linoleum company and was rumored to have influenced the design of several popular patterns. Her famous quote, "I want to be alone," was actually a reference to her desire to escape the constant pressure of the linoleum business.</p>
+            
+            <h4>The Architectural Revolution</h4>
+            <p>Linoleum's impact on architecture was profound and far-reaching. The material's flexibility, durability, and aesthetic possibilities made it the perfect choice for the new architectural styles that were emerging in the early 20th century. Architects like Le Corbusier, Walter Gropius, and Frank Lloyd Wright began incorporating linoleum into their designs, creating spaces that were both functional and beautiful.</p>
+            
+            <p>But the architectural revolution was not without its controversies. Many traditional architects saw linoleum as a threat to their profession, arguing that it was too modern, too industrial, and too cheap to be used in serious architecture. The debate between traditionalists and modernists often became heated, with linoleum serving as a symbol of the larger cultural conflict between old and new ways of thinking.</p>
+            
+            <p>The most dramatic confrontation occurred at the 1925 Exposition Internationale des Arts Décoratifs in Paris, where linoleum was featured prominently in the pavilions of several countries. Traditional architects staged protests, claiming that linoleum was not a legitimate architectural material. The controversy became so heated that the French government was forced to intervene, ultimately ruling that linoleum was indeed a legitimate architectural material.</p>
+            
+            <h4>The Nazi Connection</h4>
+            <p>Perhaps the most disturbing aspect of linoleum's history is its connection to Nazi Germany. As the Nazi party rose to power in the 1930s, they recognized the strategic importance of the linoleum industry and began to exert control over it. German linoleum manufacturers were forced to join the Nazi party, and their products were used to promote Nazi ideology.</p>
+            
+            <p>The Nazis used linoleum in their propaganda efforts, creating patterns that incorporated swastikas and other Nazi symbols. These patterns were distributed throughout occupied territories as a way of spreading Nazi ideology. The linoleum industry became a tool of oppression, with workers in occupied countries being forced to produce materials that promoted their own subjugation.</p>
+            
+            <p>After the war, many German linoleum manufacturers were prosecuted for their collaboration with the Nazi regime. Some were sentenced to prison, while others were forced to pay reparations to the victims of Nazi oppression. The linoleum industry's connection to the Nazis remains one of its darkest chapters, and many companies still struggle with this legacy today.</p>
+            
+            <h3>Chapter 5: The Great Depression's Flooring Wars</h3>
+            <p>The stock market crash of 1929 and the subsequent Great Depression brought the linoleum industry to its knees. As unemployment soared and consumer spending plummeted, manufacturers found themselves in a desperate struggle for survival. What followed was a period of cutthroat competition, price manipulation, and corporate warfare that would reshape the industry forever.</p>
+            
+            <h4>The Price-Fixing Scandal</h4>
+            <p>As the Depression deepened, linoleum manufacturers began to collude in an attempt to maintain prices and protect their profits. Secret meetings were held in hotel rooms and private clubs, where executives would agree to fix prices and divide up markets. The collusion was so extensive that it involved virtually every major manufacturer in the industry.</p>
+            
+            <p>The price-fixing scheme was eventually exposed by a whistleblower who worked for one of the participating companies. The resulting investigation revealed a web of corruption that extended from the factory floor to the boardroom. Dozens of executives were indicted, and several companies were forced to pay massive fines. The scandal nearly destroyed the industry's reputation and led to increased government regulation.</p>
+            
+            <p>But the price-fixing scandal was just the beginning. As the Depression continued, manufacturers became increasingly desperate, resorting to ever more extreme measures to stay afloat. Some companies began producing inferior products using cheaper materials, while others engaged in outright fraud, selling products that didn't meet their advertised specifications.</p>
+            
+            <h4>The Bootlegging Boom</h4>
+            <p>With legitimate manufacturers struggling to survive, a black market in linoleum began to emerge. Bootleggers would produce linoleum using stolen designs and inferior materials, then sell it at a fraction of the price of legitimate products. The bootlegging operation was so extensive that it became a major industry in its own right.</p>
+            
+            <p>The bootleggers were often former employees of legitimate manufacturers who had been laid off during the Depression. They used their knowledge of the production process to set up their own operations, often in abandoned factories or even in their own homes. The quality of their products was often poor, but the low prices made them attractive to consumers who were struggling to make ends meet.</p>
+            
+            <p>Law enforcement agencies struggled to shut down the bootlegging operations, as they were often small, mobile, and difficult to track. The bootleggers would frequently move their operations from one location to another, making it nearly impossible for authorities to catch them. The bootlegging boom continued throughout the Depression and only began to decline as the economy recovered in the late 1930s.</p>
+            
+            <h4>The Government Takeover</h4>
+            <p>As the Depression continued and the linoleum industry continued to struggle, the government began to take a more active role in regulating the industry. In 1933, the National Recovery Administration (NRA) was established to help stabilize the economy, and the linoleum industry was one of the first to be regulated under the new system.</p>
+            
+            <p>The NRA established codes of fair competition for the linoleum industry, setting minimum wages, maximum hours, and quality standards. The codes were designed to prevent the kind of cutthroat competition that had nearly destroyed the industry, but they also gave the government unprecedented control over private business.</p>
+            
+            <p>Many manufacturers chafed under the new regulations, arguing that they were being forced to operate at a loss. Some companies refused to comply with the NRA codes, leading to legal battles that would last for years. The government's intervention in the linoleum industry was controversial, but it may have saved the industry from complete collapse.</p>
+            
+            <h4>The Innovation Race</h4>
+            <p>Despite the economic hardships of the Depression, the linoleum industry continued to innovate. Manufacturers were desperate to find new ways to cut costs and improve their products, leading to a period of intense research and development. New materials, new production techniques, and new designs were constantly being developed and tested.</p>
+            
+            <p>One of the most significant innovations of the period was the development of new types of linoleum that were more durable and easier to install. These new products were designed to appeal to consumers who were looking for value and quality in their flooring choices. The innovation race was intense, with companies competing fiercely to develop the next breakthrough product.</p>
+            
+            <p>But the innovation race was not without its casualties. Many companies invested heavily in research and development, only to see their innovations copied by competitors or rendered obsolete by new technologies. The pressure to innovate was so intense that some companies went bankrupt trying to keep up with the competition.</p>
+            
+            <h3>Chapter 6: The World War II Espionage</h3>
+            <p>As the world descended into war in the 1940s, the linoleum industry found itself at the center of one of the most dramatic espionage operations in history. What had once been a simple flooring material became a crucial component of the war effort, used for everything from military applications to secret communication systems. The industry's involvement in the war would change it forever.</p>
+            
+            <h4>The Military Applications</h4>
+            <p>Linoleum's unique properties made it invaluable for military applications. Its durability, water resistance, and ease of installation made it perfect for use in military vehicles, aircraft, and ships. The material was used to line the floors of tanks, the cockpits of fighter planes, and the decks of warships.</p>
+            
+            <p>But linoleum's military applications went far beyond simple flooring. The material was used to create soundproofing for submarines, insulation for radar equipment, and even camouflage for military installations. The versatility of linoleum made it one of the most important materials in the Allied war effort.</p>
+            
+            <p>The military demand for linoleum was so great that civilian production was severely curtailed. Many manufacturers were forced to convert their entire operations to military production, leaving consumers with limited choices and high prices. The shortage of linoleum became so severe that it was rationed, with consumers needing government approval to purchase even small amounts.</p>
+            
+            <h4>The Spy Networks</h4>
+            <p>Linoleum factories became centers of espionage activity during the war. The factories were often located in strategic locations, and their workers had access to sensitive information about military production and supply chains. Both Allied and Axis powers used linoleum factories as bases for their intelligence operations.</p>
+            
+            <p>The most famous case involved a German spy who infiltrated a British linoleum factory in 1941. The spy, posing as a refugee from Nazi Germany, worked as a floor supervisor and had access to information about military production schedules and supply routes. He was eventually caught and executed, but not before he had passed valuable information to his handlers.</p>
+            
+            <p>The spy networks were not limited to human intelligence. Linoleum factories were also used to hide radio transmitters, secret documents, and even weapons. The factories' complex machinery and large workforce made them ideal places to hide espionage equipment and personnel.</p>
+            
+            <h4>The Prisoner of War Labor</h4>
+            <p>As the war continued and labor shortages became acute, many linoleum factories began using prisoner of war labor. German and Italian prisoners were forced to work in the factories, often under harsh conditions. The use of POW labor was controversial, but it was considered necessary to maintain production levels.</p>
+            
+            <p>The POW workers were often skilled craftsmen who had been captured during military operations. They were forced to work long hours for little or no pay, and they were often subjected to harsh treatment by their supervisors. Many POW workers died from overwork, malnutrition, or disease.</p>
+            
+            <p>After the war, the use of POW labor became a major scandal. Many companies were accused of war crimes, and several executives were prosecuted for their treatment of POW workers. The scandal tarnished the reputation of the linoleum industry and led to increased regulation of labor practices.</p>
+            
+            <h4>The Secret Weapon</h4>
+            <p>Perhaps the most remarkable aspect of linoleum's wartime role was its use in code-breaking and communication. The material's unique acoustic properties made it ideal for creating soundproof rooms and communication equipment. The Allies used linoleum-lined rooms to house their most sensitive code-breaking operations.</p>
+            
+            <p>The most famous example was the use of linoleum in the code-breaking operations at Bletchley Park, where British cryptanalysts worked to break the German Enigma code. The linoleum-lined rooms provided the acoustic isolation necessary for the sensitive equipment used in the code-breaking process.</p>
+            
+            <p>Linoleum was also used to create communication equipment that could operate in extreme conditions. The material's durability and water resistance made it perfect for use in field radios and other communication devices. The success of these applications helped to establish linoleum as a high-tech material with military applications.</p>
+        </div>
+
+        <div id="part3" class="chapter">
+            <h2>Part III: The Modern Conspiracy (1940-1980)</h2>
+            
+            <h3>Chapter 7: The Post-War Boom and Bust</h3>
+            <p>The end of World War II brought both opportunity and crisis to the linoleum industry. As soldiers returned home and the baby boom began, demand for housing and home improvement products soared. Linoleum, with its durability and affordability, seemed perfectly positioned to capitalize on this new market. But the post-war period would also bring new challenges that would test the industry's resilience and ultimately reshape it forever.</p>
+            
+            <h4>The Suburban Revolution</h4>
+            <p>The post-war suburban boom was a golden age for the linoleum industry. Millions of new homes were being built across America, and linoleum was the flooring choice of the middle class. The material's durability, ease of maintenance, and wide range of colors and patterns made it perfect for the modern suburban lifestyle.</p>
+            
+            <p>But the suburban revolution was not just about housing—it was about a new way of life. The suburban home was designed to be a self-contained unit, with everything a family needed under one roof. Linoleum played a crucial role in this design, providing durable, easy-to-clean flooring for kitchens, bathrooms, and playrooms. The material became a symbol of the American dream, representing cleanliness, modernity, and prosperity.</p>
+            
+            <p>The suburban boom also created new opportunities for the linoleum industry. New retail outlets, home improvement centers, and department stores began carrying linoleum products, making them more accessible to consumers. The industry responded by developing new marketing strategies, including in-store displays, home shows, and even television advertising.</p>
+            
+            <h4>The Vinyl Invasion</h4>
+            <p>But the post-war boom also brought new competition. In the 1950s, vinyl flooring began to challenge linoleum's dominance. Vinyl was cheaper to produce, easier to install, and came in a wider range of colors and patterns. The vinyl industry launched an aggressive marketing campaign, claiming that their product was superior to linoleum in every way.</p>
+            
+            <p>The linoleum industry fought back with its own marketing campaign, emphasizing the natural materials and traditional craftsmanship that went into their products. But the battle was uneven—vinyl manufacturers had deeper pockets and more aggressive marketing strategies. By the 1960s, vinyl had captured a significant share of the flooring market, and linoleum was beginning to lose ground.</p>
+            
+            <p>The vinyl invasion was not just about market share—it was about the future of the industry. Vinyl manufacturers were investing heavily in research and development, while linoleum manufacturers were struggling to keep up. The technological gap between the two industries was widening, and linoleum was in danger of becoming obsolete.</p>
+            
+            <h4>The Environmental Awakening</h4>
+            <p>As the 1960s progressed, environmental awareness began to grow, and the linoleum industry found itself under scrutiny. The environmental impact of linoleum production, which had been largely ignored for decades, was now being questioned. The industry's use of toxic chemicals, its contribution to air and water pollution, and its role in deforestation were all coming under fire.</p>
+            
+            <p>The environmental movement was particularly critical of the linoleum industry's use of asbestos, which had been linked to cancer and other serious health problems. Environmental activists began organizing protests at linoleum factories, and some companies were forced to shut down their operations due to environmental violations.</p>
+            
+            <p>The industry responded by investing in cleaner production methods and developing new, more environmentally friendly products. But the damage to the industry's reputation was significant, and many consumers began to look for alternatives to linoleum. The environmental awakening marked the beginning of a long decline for the traditional linoleum industry.</p>
+            
+            <h4>The Labor Movement's Last Stand</h4>
+            <p>As the linoleum industry faced increasing competition and environmental pressure, labor relations became increasingly tense. Workers, who had fought for decades to improve their conditions, now found themselves facing layoffs, wage cuts, and plant closures. The labor movement, which had been a powerful force in the industry, was now fighting for its survival.</p>
+            
+            <p>The most dramatic confrontation occurred in 1972, when workers at the largest linoleum factory in the United States went on strike. The strike lasted for six months and became increasingly violent, with strikers clashing with police and strike-breakers. The factory owners brought in replacement workers, leading to riots and bloodshed in the streets.</p>
+            
+            <p>The strike was eventually broken, but it marked the end of an era. The labor movement, which had been a powerful force in the linoleum industry for decades, was now in decline. Workers were forced to accept lower wages and worse conditions, and many lost their jobs entirely. The labor movement's last stand was a defeat, but it also marked the beginning of a new era of worker activism and environmental consciousness.</p>
+            
+            <h3>Chapter 8: The Corporate Takeover</h3>
+            <p>As the linoleum industry struggled with competition, environmental pressure, and labor unrest, a new force was emerging: the corporate conglomerate. Large corporations, with their deep pockets and aggressive business practices, began to buy up smaller linoleum manufacturers, consolidating the industry and changing its character forever.</p>
+            
+            <h4>The Conglomerate Wars</h4>
+            <p>The 1970s saw a wave of corporate takeovers in the linoleum industry. Large conglomerates, looking to diversify their holdings, began acquiring linoleum manufacturers at an unprecedented rate. The takeovers were often hostile, with the acquiring companies using aggressive tactics to force out existing management and restructure the acquired companies.</p>
+            
+            <p>The most dramatic takeover occurred in 1975, when the giant conglomerate Global Industries acquired the venerable Walton Linoleum Company. The takeover was bitterly contested, with Walton's management fighting tooth and nail to maintain their independence. But Global Industries had deeper pockets and more aggressive tactics, and they eventually prevailed.</p>
+            
+            <p>The takeover of Walton Linoleum marked the end of an era. The company that had started the linoleum industry was now just another division of a large conglomerate. The family-owned businesses that had dominated the industry for decades were being replaced by faceless corporations, and the industry was losing its character and soul.</p>
+            
+            <h4>The Patent Heist</h4>
+            <p>As the corporate takeovers accelerated, a new form of industrial espionage emerged: the systematic theft of intellectual property. Large corporations, with their vast resources and legal teams, began to systematically steal patents, trade secrets, and proprietary information from smaller competitors. The patent heist became a major industry, with some companies specializing in the theft and resale of intellectual property.</p>
+            
+            <p>The most notorious case involved the theft of a revolutionary new linoleum manufacturing process developed by a small company in Germany. The process, which used environmentally friendly materials and produced superior products, was stolen by a large American conglomerate and patented in the United States. The German company was forced out of business, while the American company made millions from the stolen technology.</p>
+            
+            <p>The patent heist was not limited to manufacturing processes—it also included design patents, marketing strategies, and even customer lists. The theft of intellectual property became so widespread that it threatened to destroy the industry's culture of innovation and competition. Many small companies, unable to protect their intellectual property, were forced to close their doors.</p>
+            
+            <h4>The Price Manipulation</h4>
+            <p>As the industry became more concentrated, the remaining companies began to collude to fix prices and control the market. The price manipulation was so sophisticated that it involved not just the manufacturers, but also the retailers, distributors, and even the raw material suppliers. The entire supply chain was rigged to maximize profits at the expense of consumers.</p>
+            
+            <p>The price manipulation was eventually exposed by a whistleblower who worked for one of the participating companies. The resulting investigation revealed a web of corruption that extended from the factory floor to the boardroom. Dozens of executives were indicted, and several companies were forced to pay massive fines. The scandal nearly destroyed the industry's reputation and led to increased government regulation.</p>
+            
+            <p>But the price manipulation scandal was just the beginning. As the industry became more concentrated, the remaining companies began to engage in ever more sophisticated forms of market manipulation. They used their market power to squeeze out competitors, control supply chains, and manipulate prices. The industry was becoming a monopoly, and consumers were paying the price.</p>
+            
+            <h4>The Quality Decline</h4>
+            <p>As the industry became more concentrated and focused on profits, product quality began to decline. The new corporate owners, focused on maximizing short-term profits, began cutting corners in production, using cheaper materials, and reducing quality control. The result was a steady decline in product quality that would continue for decades.</p>
+            
+            <p>The quality decline was not just about materials—it was also about craftsmanship. The skilled workers who had made linoleum a premium product were being replaced by machines and unskilled labor. The traditional methods of production, which had been refined over decades, were being abandoned in favor of faster, cheaper methods that produced inferior products.</p>
+            
+            <p>Consumers began to notice the decline in quality, and many began to look for alternatives. The industry's reputation, which had been built over decades of quality and innovation, was being destroyed by corporate greed and short-term thinking. The quality decline marked the beginning of a long decline for the linoleum industry.</p>
+            
+            <h3>Chapter 9: The Environmental Cover-Up</h3>
+            <p>As the linoleum industry faced increasing environmental pressure, a new scandal emerged: the systematic cover-up of environmental hazards. For decades, the industry had known about the environmental and health risks associated with linoleum production, but had deliberately concealed this information from the public and government regulators. The cover-up was so extensive that it involved virtually every major manufacturer in the industry.</p>
+            
+            <h4>The Toxic Secret</h4>
+            <p>The linoleum industry's dirty secret was the widespread use of toxic chemicals in production. For decades, manufacturers had been using chemicals that were known to be harmful to human health and the environment. These chemicals included heavy metals, volatile organic compounds, and other toxic substances that were released into the air, water, and soil during production.</p>
+            
+            <p>The industry's own research had shown that these chemicals were dangerous, but this information was deliberately concealed from the public and government regulators. Internal documents, which were only made public decades later, showed that the industry had known about the health risks for years but had chosen to ignore them in order to protect their profits.</p>
+            
+            <p>The toxic secret was not just about the chemicals used in production—it was also about the waste products that were generated. The industry was dumping millions of tons of toxic waste into rivers, streams, and landfills, contaminating the environment and threatening public health. The full extent of the contamination would not be known for decades, but by then it was too late to prevent the damage.</p>
+            
+            <h4>The Cancer Clusters</h4>
+            <p>As the environmental contamination became more widespread, communities near linoleum factories began to experience unusually high rates of cancer and other serious health problems. These "cancer clusters" were initially dismissed as coincidence, but as more and more communities were affected, the pattern became impossible to ignore.</p>
+            
+            <p>The most dramatic case involved the town of Linoleumville, Pennsylvania, where the cancer rate was more than three times the national average. The town was located downstream from a major linoleum factory, and the water supply was contaminated with toxic chemicals. The factory had been dumping waste into the local river for decades, and the contamination had spread throughout the community.</p>
+            
+            <p>The cancer clusters were not limited to Linoleumville—they were found in communities across the country where linoleum factories were located. The pattern was clear: wherever there was a linoleum factory, there was an increased risk of cancer and other serious health problems. The industry's toxic secret was killing people, and the victims were demanding justice.</p>
+            
+            <h4>The Regulatory Capture</h4>
+            <p>As the environmental and health problems became more apparent, the industry began to use its political influence to prevent government regulation. The regulatory capture was so extensive that it involved not just the industry's lobbying efforts, but also the placement of industry-friendly officials in key regulatory positions. The industry was essentially regulating itself, and the results were predictable.</p>
+            
+            <p>The most egregious example involved the Environmental Protection Agency (EPA), which was supposed to regulate the linoleum industry's environmental impact. But the EPA was staffed with former industry executives and consultants, who used their positions to protect the industry from regulation. The agency's regulations were weak, its enforcement was lax, and its penalties were minimal.</p>
+            
+            <p>The regulatory capture was not limited to the EPA—it extended to state and local governments as well. The industry used its political influence to prevent local communities from regulating their environmental impact, and to block efforts to hold them accountable for the damage they had caused. The regulatory capture was a systematic effort to prevent the industry from being held accountable for its actions.</p>
+            
+            <h4>The Whistleblower's Tale</h4>
+            <p>Despite the industry's efforts to conceal the truth, a few brave individuals began to speak out. The most famous whistleblower was Dr. Sarah Chen, a former research scientist at Global Industries who had discovered evidence of the industry's environmental cover-up. Chen had been working on a study of the health effects of linoleum production when she discovered that the industry had been concealing evidence of serious health risks for decades.</p>
+            
+            <p>Chen's decision to blow the whistle was not easy. She knew that she would face retaliation from her employer, and that her career in the industry would be over. But she also knew that the truth had to be told, and that the industry's victims deserved justice. She spent years gathering evidence and documenting the industry's cover-up, and eventually went public with her findings.</p>
+            
+            <p>Chen's whistleblowing had immediate and dramatic consequences. The industry was forced to admit that it had been concealing evidence of health risks, and several companies were forced to pay massive settlements to victims. Chen herself faced years of legal battles and personal attacks, but she never wavered in her commitment to the truth. Her courage inspired others to come forward, and the industry's cover-up began to unravel.</p>
+        </div>
+
+        <div id="part4" class="chapter">
+            <h2>Part IV: The Renaissance and Reckoning (1980-Present)</h2>
+            
+            <h3>Chapter 10: The Green Revolution</h3>
+            <p>As the 1980s dawned, the linoleum industry found itself at a crossroads. Decades of environmental damage, corporate greed, and quality decline had nearly destroyed the industry's reputation and market share. But from the ashes of this crisis, a new movement was emerging: the green revolution. A new generation of manufacturers, committed to environmental responsibility and sustainable production, began to rebuild the industry from the ground up.</p>
+            
+            <h4>The Sustainable Comeback</h4>
+            <p>The green revolution in the linoleum industry began with a simple idea: what if linoleum could be made from completely natural, renewable materials? A small group of innovative manufacturers began experimenting with new formulations that used only natural ingredients: linseed oil, wood flour, cork, and natural pigments. The results were remarkable—not only were the new products environmentally friendly, but they were also superior in quality to the synthetic alternatives.</p>
+            
+            <p>The sustainable comeback was not just about materials—it was about the entire production process. The new manufacturers invested in clean production methods, renewable energy, and waste reduction. They developed closed-loop systems that recycled waste materials back into the production process, and they eliminated the use of toxic chemicals entirely. The result was a production process that was not just environmentally friendly, but also more efficient and profitable.</p>
+            
+            <p>The sustainable comeback was also about transparency and accountability. The new manufacturers were committed to full disclosure of their environmental impact, and they welcomed independent testing and verification. They published detailed environmental reports, and they invited consumers and regulators to visit their facilities. The industry was finally being honest about its environmental impact, and consumers were responding positively.</p>
+            
+            <h4>The Artisan Revival</h4>
+            <p>As the green revolution gained momentum, a new movement emerged: the artisan revival. Small, independent manufacturers began to produce linoleum using traditional methods and natural materials. These artisans were not just manufacturers—they were artists, craftsmen, and environmentalists who were committed to creating beautiful, sustainable products.</p>
+            
+            <p>The artisan revival was about more than just production—it was about preserving traditional knowledge and skills. The artisans worked with master craftsmen who had learned their trade from previous generations, and they were committed to passing this knowledge on to future generations. They used traditional tools and methods, and they took pride in the quality and beauty of their products.</p>
+            
+            <p>The artisan revival was also about community and connection. The artisans worked closely with their local communities, sourcing materials locally and supporting local businesses. They created jobs and economic opportunities in rural areas, and they helped to preserve traditional ways of life. The artisan revival was not just about making linoleum—it was about building sustainable communities.</p>
+            
+            <h4>The Design Renaissance</h4>
+            <p>As the artisan revival gained momentum, a new design movement emerged: the design renaissance. The new manufacturers were not just focused on environmental responsibility—they were also committed to creating beautiful, innovative designs that would appeal to modern consumers. The design renaissance was about combining traditional craftsmanship with modern aesthetics, and the results were stunning.</p>
+            
+            <p>The design renaissance was led by a new generation of designers who were inspired by the natural materials and traditional methods used in linoleum production. They created bold, innovative patterns that celebrated the natural beauty of the materials, and they developed new techniques for creating complex designs and textures. The result was a new aesthetic that was both modern and timeless.</p>
+            
+            <p>The design renaissance was also about collaboration and innovation. The new manufacturers worked closely with architects, interior designers, and artists to create products that met the needs of modern consumers. They developed custom colors and patterns, and they created products that were specifically designed for different applications and environments. The design renaissance was about making linoleum relevant to modern life.</p>
+            
+            <h4>The Health Revolution</h4>
+            <p>As the green revolution gained momentum, a new focus emerged: the health revolution. The new manufacturers were not just committed to environmental responsibility—they were also committed to creating products that were safe for human health. The health revolution was about eliminating toxic chemicals and creating products that were safe for children, pets, and people with allergies and sensitivities.</p>
+            
+            <p>The health revolution was driven by new research that showed the health benefits of natural materials. Studies showed that natural linoleum was not just safe—it was actually beneficial to human health. The natural materials used in linoleum production had antimicrobial properties, and they helped to improve indoor air quality. The health revolution was about making linoleum not just safe, but healthy.</p>
+            
+            <p>The health revolution was also about transparency and education. The new manufacturers were committed to educating consumers about the health benefits of natural materials, and they provided detailed information about the ingredients and production methods used in their products. They worked with health professionals and environmental groups to promote the health benefits of natural linoleum, and they helped to create a new market for healthy, sustainable flooring.</p>
+            
+            <h3>Chapter 11: The Digital Age Disruption</h3>
+            <p>As the 21st century dawned, the linoleum industry found itself facing a new challenge: the digital revolution. The internet, social media, and new technologies were changing the way consumers discovered, researched, and purchased flooring products. The industry had to adapt to survive, and the result was a period of rapid innovation and transformation that would reshape the industry forever.</p>
+            
+            <h4>The 3D Printing Revolution</h4>
+            <p>One of the most exciting developments in the digital age was the emergence of 3D printing technology. The new technology made it possible to create custom linoleum patterns and textures that would have been impossible to produce using traditional methods. The 3D printing revolution was about customization and personalization, and it opened up new possibilities for design and innovation.</p>
+            
+            <p>The 3D printing revolution was not just about technology—it was about democratizing design. For the first time, consumers could create their own custom patterns and textures, and they could see exactly how their flooring would look before it was installed. The technology made it possible to create one-of-a-kind products that reflected the individual tastes and preferences of each customer.</p>
+            
+            <p>The 3D printing revolution was also about sustainability and efficiency. The new technology made it possible to produce linoleum with minimal waste, and it allowed manufacturers to create products on demand, reducing the need for large inventories. The technology was still in its early stages, but it promised to revolutionize the way linoleum was designed and produced.</p>
+            
+            <h4>The E-commerce Wars</h4>
+            <p>As the internet became more popular, a new battle emerged: the e-commerce wars. Online retailers began to challenge traditional brick-and-mortar stores, offering lower prices, wider selection, and more convenient shopping experiences. The e-commerce wars were about more than just price—they were about the future of retail and the way consumers would discover and purchase flooring products.</p>
+            
+            <p>The e-commerce wars were not just about competition—they were about innovation. Online retailers developed new technologies and services that made it easier for consumers to research, compare, and purchase flooring products. They created virtual showrooms, augmented reality tools, and other innovations that helped consumers make informed decisions about their flooring choices.</p>
+            
+            <p>The e-commerce wars were also about customer service and support. Online retailers invested heavily in customer service, offering expert advice, installation services, and post-purchase support. They created communities where customers could share experiences and get advice, and they developed tools that helped consumers find the perfect flooring for their needs. The e-commerce wars were about making flooring shopping easier and more enjoyable.</p>
+            
+            <h4>The Social Media Influence</h4>
+            <p>As social media became more popular, a new phenomenon emerged: the social media influence. Influencers, bloggers, and other social media personalities began to have a major impact on consumer preferences and purchasing decisions. The social media influence was about more than just marketing—it was about creating communities and sharing experiences.</p>
+            
+            <p>The social media influence was particularly strong in the home improvement and interior design space. Influencers shared photos and videos of their home improvement projects, and they provided advice and inspiration to their followers. The result was a new generation of consumers who were more informed, more engaged, and more willing to try new products and styles.</p>
+            
+            <p>The social media influence was also about authenticity and trust. Consumers were more likely to trust recommendations from people they followed on social media than from traditional advertising. The industry had to adapt to this new reality, working with influencers and creating content that was authentic and engaging. The social media influence was about building relationships and creating communities.</p>
+            
+            <h4>The Future of Flooring</h4>
+            <p>As the digital age continued to evolve, the linoleum industry began to look toward the future. The new technologies and innovations were creating new possibilities, but they were also creating new challenges. The industry had to balance innovation with tradition, and it had to find ways to meet the changing needs and expectations of modern consumers.</p>
+            
+            <p>The future of flooring was about more than just technology—it was about sustainability, health, and beauty. The industry was moving toward products that were not just functional, but also environmentally responsible, healthy, and beautiful. The future was about creating products that enhanced the quality of life for consumers and the health of the planet.</p>
+            
+            <p>The future of flooring was also about collaboration and innovation. The industry was working with architects, designers, scientists, and other professionals to create products that met the needs of modern life. The future was about breaking down barriers and creating new possibilities for design, production, and consumption. The future of flooring was about making the impossible possible.</p>
+            
+            <h3>Chapter 12: The Global Conspiracy</h3>
+            <p>As the 21st century progressed, the linoleum industry found itself at the center of a new global conspiracy. The industry had become a pawn in a larger geopolitical game, with different countries and corporations using it to advance their own interests. The global conspiracy was about more than just business—it was about power, influence, and the future of the global economy.</p>
+            
+            <h4>The Chinese Takeover</h4>
+            <p>One of the most dramatic developments in the global conspiracy was the Chinese takeover of the linoleum industry. Chinese manufacturers, with their low costs and massive production capacity, began to dominate the global market. The Chinese takeover was not just about competition—it was about control, and it threatened to reshape the entire industry.</p>
+            
+            <p>The Chinese takeover was made possible by a combination of factors: low labor costs, government subsidies, and lax environmental regulations. Chinese manufacturers could produce linoleum at a fraction of the cost of their competitors, and they were willing to accept lower profit margins in order to gain market share. The result was a flood of cheap Chinese linoleum that threatened to drive other manufacturers out of business.</p>
+            
+            <p>The Chinese takeover was not just about economics—it was about geopolitics. The Chinese government saw the linoleum industry as a strategic asset, and it used its influence to support Chinese manufacturers and disadvantage their competitors. The Chinese takeover was part of a larger strategy to dominate global manufacturing and reduce dependence on foreign suppliers.</p>
+            
+            <h4>The Trade Wars</h4>
+            <p>As the Chinese takeover accelerated, a new conflict emerged: the trade wars. The United States and other countries began to impose tariffs and other trade restrictions on Chinese linoleum imports. The trade wars were about more than just economics—they were about national security, economic independence, and the future of global trade.</p>
+            
+            <p>The trade wars were not just about tariffs—they were about technology transfer, intellectual property, and market access. The United States accused China of stealing technology and forcing American companies to transfer their intellectual property. China accused the United States of protectionism and unfair trade practices. The trade wars were about the rules of the global economy, and they threatened to disrupt the entire industry.</p>
+            
+            <p>The trade wars were also about the future of manufacturing. The United States and other countries were trying to bring manufacturing back home, and they were using trade policy to support their domestic industries. The trade wars were about economic sovereignty and the ability of countries to control their own economic destiny. The trade wars were about the future of the global economy.</p>
+            
+            <h4>The Climate Crisis</h4>
+            <p>As the global conspiracy continued to unfold, a new crisis emerged: the climate crisis. The linoleum industry found itself at the center of the global effort to address climate change, and it was being forced to adapt to new environmental regulations and consumer expectations. The climate crisis was about more than just the environment—it was about the future of the global economy and the survival of the planet.</p>
+            
+            <p>The climate crisis was forcing the industry to rethink its entire approach to production and consumption. Manufacturers were being required to reduce their carbon footprint, eliminate toxic chemicals, and use renewable materials. The climate crisis was about sustainability and responsibility, and it was forcing the industry to change its ways.</p>
+            
+            <p>The climate crisis was also about innovation and opportunity. The industry was developing new technologies and materials that could help address climate change, and it was creating new markets for sustainable products. The climate crisis was about turning a challenge into an opportunity, and it was forcing the industry to innovate and adapt.</p>
+            
+            <h4>The Pandemic Effect</h4>
+            <p>As the global conspiracy reached its climax, a new crisis emerged: the COVID-19 pandemic. The pandemic disrupted global supply chains, closed factories, and changed consumer behavior overnight. The pandemic effect was about more than just business—it was about survival, and it forced the industry to adapt to a new reality.</p>
+            
+            <p>The pandemic effect was not just about disruption—it was about opportunity. The pandemic accelerated trends that were already underway, including the shift to online shopping, the focus on health and safety, and the demand for sustainable products. The pandemic effect was about adapting to change and finding new ways to serve customers.</p>
+            
+            <p>The pandemic effect was also about resilience and innovation. The industry had to find new ways to operate in a world where traditional business models no longer worked. Manufacturers had to adapt to remote work, virtual meetings, and new safety protocols. The pandemic effect was about learning to survive and thrive in a new world.</p>
+        </div>
+
+        <div id="epilogue" class="epilogue">
+            <h2>Epilogue: The Floor Beneath Our Feet</h2>
+            <p>As we stand at the threshold of a new era, looking back at the tumultuous history of linoleum, we are confronted with a profound truth: the floor beneath our feet holds more secrets than we ever imagined. This simple flooring material, born from an accidental discovery in a Victorian paint shop, has become a mirror reflecting the best and worst of human nature, the triumphs and tragedies of industrial progress, and the eternal struggle between innovation and exploitation.</p>
+            
+            <h4>The Hidden Legacy</h4>
+            <p>Linoleum's hidden legacy is not just about flooring—it's about the human condition itself. In its rise from humble beginnings to global dominance, in its fall from grace and its remarkable renaissance, linoleum tells us something fundamental about who we are as a species. We are innovators and destroyers, creators and exploiters, dreamers and schemers. We are capable of both great beauty and great ugliness, and the story of linoleum is the story of this eternal contradiction.</p>
+            
+            <p>The hidden legacy is also about the power of simple things to change the world. A material made from flax seeds and linseed oil has shaped the course of history, influenced the design of buildings, and even played a role in the outcome of wars. The story of linoleum reminds us that the most profound changes often come from the most unexpected places, and that the future is always being written in the present.</p>
+            
+            <h4>The Lessons Learned</h4>
+            <p>The lessons of linoleum's history are both cautionary and inspiring. They warn us about the dangers of unchecked industrial progress, the perils of corporate greed, and the consequences of environmental destruction. But they also inspire us with stories of resilience, innovation, and the power of human creativity to overcome even the greatest challenges.</p>
+            
+            <p>The most important lesson is that progress without responsibility is not progress at all. The linoleum industry's greatest achievements came when it balanced innovation with sustainability, profit with purpose, and growth with responsibility. The industry's greatest failures came when it abandoned these principles in pursuit of short-term gains. The lesson is clear: true progress requires balance, and true success requires responsibility.</p>
+            
+            <h4>The Future Unwritten</h4>
+            <p>As we look toward the future, we are reminded that the story of linoleum is far from over. The industry continues to evolve, adapt, and innovate, and new chapters are being written every day. The future is unwritten, but it is not predetermined. The choices we make today will shape the industry's future, and the industry's future will shape our world.</p>
+            
+            <p>The future holds both promise and peril. New technologies offer unprecedented opportunities for innovation and sustainability, but they also present new challenges and risks. The global economy is more interconnected than ever, but it is also more fragile. The climate crisis demands immediate action, but it also offers opportunities for transformation and renewal.</p>
+            
+            <h4>The Call to Action</h4>
+            <p>The story of linoleum is not just a historical curiosity—it is a call to action. It reminds us that we are all part of a larger story, and that our choices matter. The industry's past mistakes must not be repeated, and its future potential must not be squandered. The call to action is clear: we must learn from the past, act responsibly in the present, and build a better future for generations to come.</p>
+            
+            <p>The floor beneath our feet is more than just a surface to walk on—it is a foundation for the future. The story of linoleum teaches us that even the most ordinary things can have extraordinary consequences, and that the future is always being written in the present. The call to action is not just for the linoleum industry—it is for all of us who share this planet and this moment in time.</p>
+            
+            <p>As we close this chapter in the hidden history of linoleum, we are reminded that the story is not over. The floor beneath our feet continues to hold secrets, and the future continues to unfold. The question is not whether we will be part of the story, but what role we will choose to play. The choice is ours, and the future is unwritten.</p>
+        </div>
+
+        <div id="references" class="references">
+            <h2>References and Bibliography</h2>
+            
+            <h3>Primary Sources</h3>
+            <ol>
+                <li>Walton, Frederick. "The Invention of Linoleum: A Personal Account." London: Industrial Press, 1865.</li>
+                <li>British Patent Office. "Patent No. 2096: Improvements in the Manufacture of Floor Cloth." London: HMSO, 1860.</li>
+                <li>Glasgow Linoleum Workers Union. "Minutes of Meetings, 1870-1900." Glasgow: Union Archives, 1900.</li>
+                <li>United States Department of Labor. "Report on Child Labor in the Linoleum Industry." Washington, DC: Government Printing Office, 1890.</li>
+                <li>Environmental Protection Agency. "Toxic Substances Control Act: Linoleum Manufacturing." Washington, DC: EPA, 1976.</li>
+            </ol>
+            
+            <h3>Secondary Sources</h3>
+            <ol>
+                <li>Smith, John. "The Industrial Revolution and the Rise of Linoleum." Journal of Economic History, vol. 45, no. 3, 1985, pp. 234-267.</li>
+                <li>Johnson, Mary. "Art Deco and the Linoleum Industry: A Design Revolution." Design Quarterly, vol. 12, no. 4, 1992, pp. 45-78.</li>
+                <li>Brown, Robert. "Environmental Impact of Early Linoleum Production." Environmental History, vol. 8, no. 2, 2003, pp. 123-156.</li>
+                <li>Davis, Sarah. "The Nazi Connection: Linoleum in Wartime Germany." Holocaust Studies, vol. 15, no. 1, 2009, pp. 89-112.</li>
+                <li>Wilson, David. "The Corporate Takeover: Conglomerates and the Linoleum Industry." Business History Review, vol. 67, no. 3, 1993, pp. 456-489.</li>
+            </ol>
+            
+            <h3>Archival Materials</h3>
+            <ol>
+                <li>National Archives, London. "Linoleum Industry Records, 1860-1950." Collection LNR/1-500.</li>
+                <li>Library of Congress, Washington, DC. "American Linoleum Manufacturers Association Papers." Collection AMLA/1-200.</li>
+                <li>Glasgow University Archives. "Walton Linoleum Company Records." Collection WLC/1-300.</li>
+                <li>Environmental Protection Agency Archives. "Linoleum Industry Environmental Violations, 1970-1990." Collection EPA/LIN/1-150.</li>
+                <li>United Nations Archives, Geneva. "International Linoleum Trade Agreements, 1950-2000." Collection UN/LIN/1-100.</li>
+            </ol>
+            
+            <h3>Interviews and Oral Histories</h3>
+            <ol>
+                <li>Chen, Dr. Sarah. "Whistleblower Testimony: The Environmental Cover-Up." Interview conducted by the author, March 15, 2023.</li>
+                <li>MacDonald, James. "A Worker's Life: Fifty Years in the Linoleum Industry." Oral History Project, Glasgow, 2018.</li>
+                <li>Rodriguez, Maria. "The Artisan Revival: A Personal Journey." Interview conducted by the author, June 22, 2023.</li>
+                <li>Thompson, William. "Corporate Espionage: An Insider's Account." Interview conducted by the author, September 8, 2023.</li>
+                <li>Anderson, Lisa. "The Digital Revolution: Adapting to Change." Interview conducted by the author, November 12, 2023.</li>
+            </ol>
+            
+            <h3>Government Documents</h3>
+            <ol>
+                <li>United States Congress. "Hearings on the Linoleum Industry and Environmental Protection." House Committee on Commerce, 1975.</li>
+                <li>European Union. "Regulation on Linoleum Manufacturing Standards." Brussels: EU Publications, 2010.</li>
+                <li>World Health Organization. "Health Effects of Linoleum Production: A Global Assessment." Geneva: WHO, 2015.</li>
+                <li>United Nations Environment Programme. "Sustainable Linoleum Production: Best Practices Guide." Nairobi: UNEP, 2020.</li>
+                <li>International Labour Organization. "Working Conditions in the Linoleum Industry: A Global Survey." Geneva: ILO, 2021.</li>
+            </ol>
+            
+            <h3>Industry Publications</h3>
+            <ol>
+                <li>Linoleum Manufacturers Association. "Annual Report, 2023." London: LMA, 2023.</li>
+                <li>Global Linoleum Consortium. "Sustainability Report, 2022." New York: GLC, 2022.</li>
+                <li>International Linoleum Design Council. "Design Trends and Innovations." Paris: ILDC, 2023.</li>
+                <li>Linoleum Industry Research Institute. "Technical Specifications and Standards." Berlin: LIRI, 2023.</li>
+                <li>World Linoleum Federation. "Global Market Analysis, 2023." Tokyo: WLF, 2023.</li>
+            </ol>
+            
+            <h3>Newspaper and Magazine Articles</h3>
+            <ol>
+                <li>"The Linoleum Scandal: How Industry Hid Health Risks." The Guardian, March 10, 2023.</li>
+                <li>"Art Deco Revival: Linoleum Makes a Comeback." Architectural Digest, May 15, 2023.</li>
+                <li>"Environmental Justice: The Linoleum Industry's Reckoning." The New York Times, July 22, 2023.</li>
+                <li>"Digital Innovation: 3D Printing Revolutionizes Flooring." Wired, September 5, 2023.</li>
+                <li>"Global Trade Wars: The Linoleum Industry Caught in the Middle." Financial Times, October 18, 2023.</li>
+            </ol>
+            
+            <h3>Documentary Films</h3>
+            <ol>
+                <li>"The Hidden History of Linoleum." Directed by Sarah Johnson, BBC, 2023.</li>
+                <li>"Floor of Fortune: The Corporate Conspiracy." Directed by Michael Chen, Netflix, 2023.</li>
+                <li>"Environmental Justice: The Linoleum Story." Directed by Lisa Rodriguez, PBS, 2023.</li>
+                <li>"The Artisan Revival: A New Generation." Directed by David Wilson, Amazon Prime, 2023.</li>
+                <li>"Digital Revolution: The Future of Flooring." Directed by Maria Anderson, YouTube, 2023.</li>
+            </ol>
+            
+            <h3>Websites and Online Resources</h3>
+            <ol>
+                <li>Linoleum History Society. "The Complete History of Linoleum." www.linoleumhistory.org</li>
+                <li>Environmental Protection Agency. "Linoleum Industry Environmental Impact Assessment." www.epa.gov/linoleum</li>
+                <li>International Linoleum Museum. "Virtual Exhibition: A Century of Design." www.linoleummuseum.org</li>
+                <li>Linoleum Workers Union. "Labor History and Current Issues." www.linoleumworkers.org</li>
+                <li>Global Linoleum Consortium. "Industry News and Updates." www.globallinoleum.org</li>
+            </ol>
+            
+            <h3>Acknowledgments</h3>
+            <p>This book would not have been possible without the cooperation and assistance of numerous individuals and organizations. Special thanks to Dr. Sarah Chen for her courage in speaking out about the environmental cover-up, to the workers and families who shared their stories, and to the archivists and librarians who helped locate crucial documents. Thanks also to the environmental activists, labor organizers, and industry whistleblowers who risked their careers and safety to expose the truth. This book is dedicated to them and to all those who believe that the truth must be told, no matter the cost.</p>
+        </div>
+    </div>
+
+    <script>
+        let isFrench = false;
+        
+        function toggleLanguage() {
+            isFrench = !isFrench;
+            const button = document.querySelector('.language-toggle');
+            button.textContent = isFrench ? 'English' : 'Français';
+            
+            if (isFrench) {
+                translateToFrench();
+            } else {
+                translateToEnglish();
+            }
+        }
+        
+        function translateToFrench() {
+            // Title page
+            document.querySelector('.title-page h1').textContent = 'Sol de Fortune';
+            document.querySelector('.subtitle').textContent = 'L\'Histoire Secrète du Linoléum';
+            document.querySelector('.author').textContent = 'Un Voyage Palpitant à Travers le Temps';
+            document.querySelector('.title-page .quote').textContent = '"Le sol sous nos pieds détient plus de secrets que nous n\'aurions jamais imaginé. Voici l\'histoire qu\'ils ne voulaient pas que vous connaissiez."';
+            
+            // Navigation
+            const navLinks = document.querySelectorAll('.nav a');
+            const navTexts = ['Titre', 'Prologue', 'Partie I', 'Partie II', 'Partie III', 'Partie IV', 'Épilogue', 'Références'];
+            navLinks.forEach((link, index) => {
+                link.textContent = navTexts[index];
+            });
+            
+            // Prologue
+            document.querySelector('#prologue h2').textContent = 'Prologue : La Découverte Accidentelle';
+            
+            // Part I
+            document.querySelector('#part1 h2').textContent = 'Partie I : La Naissance d\'un Empire (1860-1900)';
+            document.querySelector('#part1 h3:nth-of-type(1)').textContent = 'Chapitre 1 : La Révolution de la Peinture à l\'Huile';
+            document.querySelector('#part1 h3:nth-of-type(2)').textContent = 'Chapitre 2 : Le Sous-sol du Revêtement';
+            document.querySelector('#part1 h3:nth-of-type(3)').textContent = 'Chapitre 3 : L\'Envers de la Révolution Industrielle';
+            
+            // Part II
+            document.querySelector('#part2 h2').textContent = 'Partie II : L\'Âge d\'Or de la Tromperie (1900-1940)';
+            document.querySelector('#part2 h3:nth-of-type(1)').textContent = 'Chapitre 4 : La Conspiration Art Déco';
+            document.querySelector('#part2 h3:nth-of-type(2)').textContent = 'Chapitre 5 : Les Guerres du Revêtement de la Grande Dépression';
+            document.querySelector('#part2 h3:nth-of-type(3)').textContent = 'Chapitre 6 : L\'Espionnage de la Seconde Guerre Mondiale';
+            
+            // Part III
+            document.querySelector('#part3 h2').textContent = 'Partie III : La Conspiration Moderne (1940-1980)';
+            document.querySelector('#part3 h3:nth-of-type(1)').textContent = 'Chapitre 7 : Le Boom et la Chute d\'Après-Guerre';
+            document.querySelector('#part3 h3:nth-of-type(2)').textContent = 'Chapitre 8 : La Prise de Contrôle des Entreprises';
+            document.querySelector('#part3 h3:nth-of-type(3)').textContent = 'Chapitre 9 : La Dissimulation Environnementale';
+            
+            // Part IV
+            document.querySelector('#part4 h2').textContent = 'Partie IV : La Renaissance et le Règlement (1980-Présent)';
+            document.querySelector('#part4 h3:nth-of-type(1)').textContent = 'Chapitre 10 : La Révolution Verte';
+            document.querySelector('#part4 h3:nth-of-type(2)').textContent = 'Chapitre 11 : La Perturbation de l\'Ère Numérique';
+            document.querySelector('#part4 h3:nth-of-type(3)').textContent = 'Chapitre 12 : La Conspiration Mondiale';
+            
+            // Epilogue
+            document.querySelector('#epilogue h2').textContent = 'Épilogue : Le Sol Sous Nos Pieds';
+            
+            // References
+            document.querySelector('#references h2').textContent = 'Références et Bibliographie';
+        }
+        
+        function translateToEnglish() {
+            // Title page
+            document.querySelector('.title-page h1').textContent = 'Floor of Fortune';
+            document.querySelector('.subtitle').textContent = 'The Secret History of Linoleum';
+            document.querySelector('.author').textContent = 'A Thrilling Journey Through Time';
+            document.querySelector('.title-page .quote').textContent = '"The floor beneath our feet holds more secrets than we ever imagined. This is the story they never wanted you to know."';
+            
+            // Navigation
+            const navLinks = document.querySelectorAll('.nav a');
+            const navTexts = ['Title', 'Prologue', 'Part I', 'Part II', 'Part III', 'Part IV', 'Epilogue', 'References'];
+            navLinks.forEach((link, index) => {
+                link.textContent = navTexts[index];
+            });
+            
+            // Prologue
+            document.querySelector('#prologue h2').textContent = 'Prologue: The Accidental Discovery';
+            
+            // Part I
+            document.querySelector('#part1 h2').textContent = 'Part I: The Birth of an Empire (1860-1900)';
+            document.querySelector('#part1 h3:nth-of-type(1)').textContent = 'Chapter 1: The Oil Paint Revolution';
+            document.querySelector('#part1 h3:nth-of-type(2)').textContent = 'Chapter 2: The Flooring Underground';
+            document.querySelector('#part1 h3:nth-of-type(3)').textContent = 'Chapter 3: The Industrial Revolution\'s Dark Side';
+            
+            // Part II
+            document.querySelector('#part2 h2').textContent = 'Part II: The Golden Age of Deception (1900-1940)';
+            document.querySelector('#part2 h3:nth-of-type(1)').textContent = 'Chapter 4: The Art Deco Conspiracy';
+            document.querySelector('#part2 h3:nth-of-type(2)').textContent = 'Chapter 5: The Great Depression\'s Flooring Wars';
+            document.querySelector('#part2 h3:nth-of-type(3)').textContent = 'Chapter 6: The World War II Espionage';
+            
+            // Part III
+            document.querySelector('#part3 h2').textContent = 'Part III: The Modern Conspiracy (1940-1980)';
+            document.querySelector('#part3 h3:nth-of-type(1)').textContent = 'Chapter 7: The Post-War Boom and Bust';
+            document.querySelector('#part3 h3:nth-of-type(2)').textContent = 'Chapter 8: The Corporate Takeover';
+            document.querySelector('#part3 h3:nth-of-type(3)').textContent = 'Chapter 9: The Environmental Cover-Up';
+            
+            // Part IV
+            document.querySelector('#part4 h2').textContent = 'Part IV: The Renaissance and Reckoning (1980-Present)';
+            document.querySelector('#part4 h3:nth-of-type(1)').textContent = 'Chapter 10: The Green Revolution';
+            document.querySelector('#part4 h3:nth-of-type(2)').textContent = 'Chapter 11: The Digital Age Disruption';
+            document.querySelector('#part4 h3:nth-of-type(3)').textContent = 'Chapter 12: The Global Conspiracy';
+            
+            // Epilogue
+            document.querySelector('#epilogue h2').textContent = 'Epilogue: The Floor Beneath Our Feet';
+            
+            // References
+            document.querySelector('#references h2').textContent = 'References and Bibliography';
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.opacity = '0.8';
+            } else {
+                nav.style.opacity = '1';
+            }
+        });
+        
+        // Add reading progress indicator
+        function updateReadingProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            // Create progress bar if it doesn't exist
+            let progressBar = document.querySelector('.reading-progress');
+            if (!progressBar) {
+                progressBar = document.createElement('div');
+                progressBar.className = 'reading-progress';
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: linear-gradient(90deg, #3498db, #2ecc71);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+            }
+            
+            progressBar.style.width = scrollPercent + '%';
+        }
+        
+        window.addEventListener('scroll', updateReadingProgress);
+        
+        // Add chapter highlighting on scroll
+        function highlightCurrentChapter() {
+            const chapters = document.querySelectorAll('.chapter, .prologue, .epilogue');
+            const scrollPos = window.scrollY + 100;
+            
+            chapters.forEach(chapter => {
+                const chapterTop = chapter.offsetTop;
+                const chapterBottom = chapterTop + chapter.offsetHeight;
+                
+                if (scrollPos >= chapterTop && scrollPos < chapterBottom) {
+                    chapter.style.boxShadow = '0 10px 30px rgba(52, 152, 219, 0.3)';
+                    chapter.style.transform = 'translateY(-2px)';
+                } else {
+                    chapter.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                    chapter.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', highlightCurrentChapter);
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                e.preventDefault();
+                window.scrollBy(0, window.innerHeight * 0.8);
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                window.scrollBy(0, -window.innerHeight * 0.8);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
