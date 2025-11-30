@@ -1,6 +1,6 @@
 # LinoleumSecretHistory
 
-🚀 **[Live Demo](https://kylemath.github.io/LinoleumSecretHistory)** 🚀
+🚀 **[Live Demo](https://kylemath.github.io/LinoleumSecretHistory)** 🚀 | 📦 **[GitHub Repository](https://github.com/kylemath/LinoleumSecretHistory)** 📦
 
 A thirlling part historical account part conspiracy theory abt lino floors we all know
 
