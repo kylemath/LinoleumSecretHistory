@@ -1,0 +1,11 @@
+{
+  "id": "linoleumSecretHistory",
+  "title": "LinoleumSecretHistory",
+  "oneLiner": "The secret history of linoleum - kyle mathewson",
+  "demoUrl": "LinoleumSecre",
+  "screenshot": "https://raw.githubusercontent.com/kylemath/LinoleumSecretHistory/main/screenshot.png",
+  "kind": "longform",
+  "categories": ["writing", "lino", "secret"],
+  "tags": ["writing", "lino", "secret"],
+  "status": "published"
+}
