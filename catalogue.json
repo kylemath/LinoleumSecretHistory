@@ -9,15 +9,3 @@
   "tags": ["writing", "lino", "novel"],
   "status": "published"
 }
-
-{
-  "id": "LinoleumSecretHistory",
-  "title": "LinoleumSecretHistory",
-  "oneLiner": "The secret history of linoleum webpage",
-  "demoUrl": "https://kylemath.github.io/LinoleumSecretHistory",
-  "screenshot": "https://raw.githubusercontent.com/kylemath/LinoleumSecretHistory/main/screenshot.png",
-  "kind": "longform",
-  "categories": ["writing", "lino", "secret"],
-  "tags": ["writing", "lino", "secret"],
-  "status": "published"
-}
