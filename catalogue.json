@@ -1,0 +1,11 @@
+{
+  "id": "LinoleumSecretHistory",
+  "title": "LinoleumSecretHistory",
+  "oneLiner": "A book about the secret history of flooring",
+  "demoUrl": "https://kylemath.github.io/LinoleumSecretHistory/",
+  "screenshot": "https://raw.githubusercontent.com/kylemath/LinoleumSecretHistory/main/screenshot.png",
+  "kind": "longform",
+  "categories": ["writing", "lino", "novel"],
+  "tags": ["writing", "lino", "novel"],
+  "status": "published"
+}
